@@ -36,15 +36,28 @@ add_action( 'init', 'wpb_custom_new_menu' );
 
 ## Header.php
 ```
-<?php 
+	<?php 
 	wp_nav_menu( 
 		array( 
-			'theme_location' => 'my-custom-menu',
-			'container_class'     => 'nav-menu-class',
-			'menu_class'          => 'menu',
-			'menu_id'       => 'menu-primary-menu',
-			'container' => 'nav',
+			'menu'                 => '',
+			'container'            => 'nav',
+			'container_class'      => 'nav-menu-class',
+			'container_id'         => '',
+			'container_aria_label' => '',
+			'menu_class'           => 'menu',
+			'menu_id'              => 'menu-primary-menu',
+			'echo'                 => true,
 			'fallback_cb'          => 'wp_page_menu',
+			'before'               => '',
+			'after'                => '',
+			'link_before'          => '',
+			'link_after'           => '',
+			'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'item_spacing'         => 'preserve',
+			'depth'                => 0,
+			'walker'               => '',
+			'theme_location'       => 'my-custom-menu-single',	
+
 		) 
 	); 
 	?>
