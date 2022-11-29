@@ -9,6 +9,11 @@ https://developer.wordpress.org/reference/functions/register_nav_menus/
 
 ## Functions.php
 ```
+function register_nav_menu( $location, $description ) {
+	register_nav_menus( array( $location => $description ) );
+}
+```
+```
 function wpb_custom_new_menu_single() {
   register_nav_menu(
   	'my-custom-menu-single',__( 'My Custom Menu Single') 
