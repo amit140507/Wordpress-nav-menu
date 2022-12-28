@@ -13,25 +13,26 @@ function register_nav_menu( $location, $description ) {
 	register_nav_menus( array( $location => $description ) );
 }
 ```
+## Single Menu
 ```
 function wpb_custom_new_menu_single() {
   register_nav_menu(
-  	'my-custom-menu-single',__( 'My Custom Menu Single') 
+  	'primary_menu',__( 'Primary Menu') 
   );
 }
 add_action( 'init', 'wpb_custom_new_menu_single' );
-
-
+```
+## Multiple Menus
+```
 function wpb_custom_new_menu() {
   register_nav_menus(
     array(
-      'my-custom-menu' => __( 'My Custom Menu' ),
-      'extra-menu' => __( 'Extra Menu' )
+      'header_menu' => __( 'Header Menu' ),
+      'footer_menu' => __( 'Footer Menu' )
     )
   );
 }
 add_action( 'init', 'wpb_custom_new_menu' );
-
 ```
 
 ## Header.php
