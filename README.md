@@ -17,7 +17,7 @@ function register_nav_menu( $location, $description ) {
 ```
 function wpb_custom_new_menu_single() {
   register_nav_menu(
-  	'primary_menu',__( 'Primary Menu') 
+  	'primary_menu',__( 'New Primary Menu') 
   );
 }
 add_action( 'init', 'wpb_custom_new_menu_single' );
@@ -27,8 +27,8 @@ add_action( 'init', 'wpb_custom_new_menu_single' );
 function wpb_custom_new_menu() {
   register_nav_menus(
     array(
-      'header_menu' => __( 'Header Menu' ),
-      'footer_menu' => __( 'Footer Menu' )
+      'header_menu' => __( 'New Header Menu' ),
+      'footer_menu' => __( 'New Footer Menu' )
     )
   );
 }
@@ -40,24 +40,24 @@ add_action( 'init', 'wpb_custom_new_menu' );
 	<?php 
 	wp_nav_menu( 
 		array( 
-			'menu'                 => '',
-			'container'            => 'nav',
-			'container_class'      => 'nav-menu-class',
-			'container_id'         => '',
-			'container_aria_label' => '',
-			'menu_class'           => 'menu',
-			'menu_id'              => 'menu-primary-menu',
-			'echo'                 => true,
-			'fallback_cb'          => 'wp_page_menu',
-			'before'               => '',
-			'after'                => '',
-			'link_before'          => '',
-			'link_after'           => '',
-			'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-			'item_spacing'         => 'preserve',
-			'depth'                => 0,
-			'walker'               => '',
-			'theme_location'       => 'my-custom-menu-single',	
+				'menu'                 => '',
+		'container'            => 'div',
+		'container_class'      => '',
+		'container_id'         => '',
+		'container_aria_label' => '',
+		'menu_class'           => 'menu',
+		'menu_id'              => '',
+		'echo'                 => true,
+		'fallback_cb'          => '',
+		'before'               => '',
+		'after'                => '',
+		'link_before'          => '',
+		'link_after'           => '',
+		'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+		'item_spacing'         => 'preserve',
+		'depth'                => 0,
+		'walker'               => '',
+		'theme_location'       => 'primary_menu',
 
 		) 
 	); 
