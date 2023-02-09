@@ -10,9 +10,7 @@ function register_nav_menu( $location, $description ) {
 ```
 function custom_nav_menu_single() {
 	register_nav_menu(
-		array(
-			'primary_menu' => esc_html__( 'New Primary Menu', 'twentytwentyone' ),
-		)
+		'primary_menu', esc_html__( 'New Primary Menu', 'twentytwentyone' ),
 	);
 }
 add_action( 'init', 'custom_nav_menu_single' );
