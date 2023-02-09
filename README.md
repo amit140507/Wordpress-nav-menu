@@ -1,19 +1,12 @@
 # Wordpress-nav-menu
 
-
-https://developer.wordpress.org/reference/functions/register_nav_menu/
-
-https://developer.wordpress.org/reference/functions/wp_nav_menu/
-
-https://developer.wordpress.org/reference/functions/register_nav_menus/
-
-## Functions.php
+### Add in ``Functions.php``
 ```
 function register_nav_menu( $location, $description ) {
 	register_nav_menus( array( $location => $description ) );
 }
 ```
-## Single Menu
+**For Single Menu**
 ```
 function wpb_custom_new_menu_single() {
   register_nav_menu(
@@ -22,7 +15,7 @@ function wpb_custom_new_menu_single() {
 }
 add_action( 'init', 'wpb_custom_new_menu_single' );
 ```
-## Multiple Menus
+**For Multiple Menus**
 ```
 function wpb_custom_new_menu() {
   register_nav_menus(
@@ -35,7 +28,7 @@ function wpb_custom_new_menu() {
 add_action( 'init', 'wpb_custom_new_menu' );
 ```
 
-## Header.php
+### Add in ``Header.php``
 ```
 	<?php 
 	wp_nav_menu( 
@@ -63,3 +56,11 @@ add_action( 'init', 'wpb_custom_new_menu' );
 	); 
 	?>
 ```
+
+## References
+
+[register_nav_menu](https://developer.wordpress.org/reference/functions/register_nav_menu/)
+
+[register_nav_menus](https://developer.wordpress.org/reference/functions/register_nav_menus/)
+
+[wp_nav_menu](https://developer.wordpress.org/reference/functions/wp_nav_menu/)
