@@ -28,34 +28,70 @@ function custom_nav_menu() {
 add_action( 'init', 'custom_nav_menu' );
 ```
 
-### Add in ``Header.php``
+### Add in ``header.php``
 ```
-	<?php 
-	wp_nav_menu( 
-		array( 
+<?php if ( has_nav_menu( 'header_menu' ) ) : ?>
+	<nav aria-label="<?php esc_attr_e( 'New Header Menu', 'twentytwentyone' ); ?>" class="header-navigation">
+		<?php 
+		wp_nav_menu( 
+			array( 
 				'menu'                 => '',
-		'container'            => 'div',
-		'container_class'      => '',
-		'container_id'         => '',
-		'container_aria_label' => '',
-		'menu_class'           => 'menu',
-		'menu_id'              => '',
-		'echo'                 => true,
-		'fallback_cb'          => '',
-		'before'               => '',
-		'after'                => '',
-		'link_before'          => '',
-		'link_after'           => '',
-		'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-		'item_spacing'         => 'preserve',
-		'depth'                => 0,
-		'walker'               => '',
-		'theme_location'       => 'primary_menu',
+				'container'            => false,
+				'container_class'      => '',
+				'container_id'         => '',
+				'container_aria_label' => '',
+				'menu_class'           => 'menu',
+				'menu_id'              => '',
+				'echo'                 => true,
+				'fallback_cb'          => false,
+				'before'               => '',
+				'after'                => '',
+				'link_before'          => '',
+				'link_after'           => '',
+				'item_spacing'         => 'preserve',
+				'depth'                => 0,
+				'walker'               => '',
+				'theme_location'       => 'header_menu',
 
-		) 
-	); 
-	?>
+			) 
+		); 
+		?>
+	</nav><!-- .header-navigation -->
+<?php endif; ?>
 ```
+
+### Add in ``footer.php``
+```
+<?php if ( has_nav_menu( 'footer_menu' ) ) : ?>
+	<nav aria-label="<?php esc_attr_e( 'New Footer Menu', 'twentytwentyone' ); ?>" class="footer-nav">
+		<?php 
+		wp_nav_menu( 
+			array( 
+				'menu'                 => '',
+				'container'            => false,
+				'container_class'      => '',
+				'container_id'         => '',
+				'container_aria_label' => '',
+				'menu_class'           => 'menu',
+				'menu_id'              => '',
+				'echo'                 => true,
+				'fallback_cb'          => false,
+				'before'               => '',
+				'after'                => '',
+				'link_before'          => '',
+				'link_after'           => '',
+				'item_spacing'         => 'preserve',
+				'depth'                => 0,
+				'walker'               => '',
+				'theme_location'       => 'footer_menu',
+
+			) 
+		); 
+		?>
+	</nav><!-- .footer-nav -->
+<?php endif; ?>
+```
+
 ### Add nav_menu_link_attributes
 
 ```
