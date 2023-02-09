@@ -56,6 +56,25 @@ add_action( 'init', 'custom_nav_menu' );
 	); 
 	?>
 ```
+### Add nav_menu_link_attributes
+
+```
+function add_link_atts($atts) {
+  $atts['class'] = "nav-link";
+  return $atts;nav_menu_link_attributes
+}
+add_filter( 'nav_menu_link_attributes', 'add_link_atts', 10 , 3 );
+```
+**For Header Menu Only**
+```
+function add_specific_menu_location_atts( $atts, $item, $args ) {
+	if( $args->theme_location == 'header_menu' ) {
+		$atts['class'] = 'nav-link';
+	}
+	return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3 );
+```
 
 ## References
 
