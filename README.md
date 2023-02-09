@@ -8,24 +8,26 @@ function register_nav_menu( $location, $description ) {
 ```
 **For Single Menu**
 ```
-function wpb_custom_new_menu_single() {
-  register_nav_menu(
-  	'primary_menu',__( 'New Primary Menu') 
-  );
+function custom_nav_menu_single() {
+	register_nav_menu(
+		array(
+			'primary_menu' => esc_html__( 'New Primary Menu', 'twentytwentyone' ),
+		)
+	);
 }
-add_action( 'init', 'wpb_custom_new_menu_single' );
+add_action( 'init', 'custom_nav_menu_single' );
 ```
 **For Multiple Menus**
 ```
-function wpb_custom_new_menu() {
-  register_nav_menus(
-    array(
-      'header_menu' => __( 'New Header Menu' ),
-      'footer_menu' => __( 'New Footer Menu' )
-    )
-  );
+function custom_nav_menu() {
+	register_nav_menus(
+		array(
+			'header_menu' => esc_html__( 'New Header Menu', 'twentytwentyone' ),
+			'footer_menu' => esc_html__( 'New Footer Menu', 'twentytwentyone' ),
+		)
+	);
 }
-add_action( 'init', 'wpb_custom_new_menu' );
+add_action( 'init', 'custom_nav_menu' );
 ```
 
 ### Add in ``Header.php``
