@@ -119,3 +119,5 @@ add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3
 [register_nav_menus](https://developer.wordpress.org/reference/functions/register_nav_menus/)
 
 [wp_nav_menu](https://developer.wordpress.org/reference/functions/wp_nav_menu/)
+
+[nav_menu_link_attributes](https://developer.wordpress.org/reference/hooks/nav_menu_link_attributes/)
