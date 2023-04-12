@@ -111,6 +111,21 @@ function add_specific_menu_location_atts( $atts, $item, $args ) {
 }
 add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3 );
 ```
+**If want to add active class on anchor Link**
+```
+
+function add_specific_menu_location_atts( $atts, $item, $args ) {
+	if( $args->theme_location == 'header_menu' ) {
+		$atts['class'] = 'nav-link';
+	}
+	if( $atts['aria-current'] == 'page' ) {
+		$atts['class'] = 'nav-link active';
+	}
+	return $atts;
+}
+
+add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3 );
+```
 
 ## References
 
